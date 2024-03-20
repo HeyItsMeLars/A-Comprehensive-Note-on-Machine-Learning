@@ -126,7 +126,26 @@ Why are we dividing by \(n-2\)? Dividing by \(n-2\), rather than just \(n\), pro
           \(R^{2}=1-\frac{\Sigma_{i}\left(y_{i}-\hat{y}_{i}\right)^{2}}{\sum_{i}\left(y_{i}-\bar{y}\right)^{2}}\). This can be interpreted as the proportion of variance explained by our model. The mean squared error is in there getting divided by total error, which is the proportion of variance \textit{unexplained} by our model and we calculate 1 minus that.
 
     \item \textit{p-values}
+\subsection{K-Nearest Neighbors}
+Unlike linear regression, which presupposes a model to fit the data to, K-nearest neighbors (KNN) is an algorthm which makes no such suppositions. This is to say that it is an instance-based model. 
+Instead, it assigns a class to data points based on the classes of the K nearest data points around it. Here, k is a hyperparameter that can be adjusted from 1 to as many data points in the dataset. However, to prevent overfitting or underfitting the data, such extreme choices would be unwise.
 
+To choose a very low value of k would seriously overfit the model, as each data point is being classified by its nearest data point. On the other end of the spectrum, choosing a very large value of k would underfit the model because each datapoint would just be assigned to whichever class has the most datapoints. 
 
+The value of k must be deliberately and intelligently selected. It should be odd (so that there cannot be a tie between the surrounding classes) and low enough to avoid underfitting, but high enough to prevent overfitting.
+
+A perhaps not-so-obvious question when we are talking about proximity is how are we defining distance? Many may assume that we're simply using the Euclidean distance between datapoints, given by the equation
+\begin{equation}
+d = (\sum_{i=1}^P{(x_{ij}-x_{ik})^2})^{\frac{1}{2}}
+\end{equation}
+however this is not the only option. The Manhattan distance, given by
+\begin{equation}
+d = sum_{i=1}^P{|x_{ij}-x_{ik}|}
+\end{equation}
+is another option, along with the Minkowski distance
+\begin{equation}
+d = (sum_{i=1}^P{|x_{ij}-x_{ik}|^\frac{1}{m}})^\frac{1}{m}
+\end{equation}
+which is just a mathematical generalization of the Euclidean distance (which is to say that the Euclidean distance is a special case of the Minkowski distance). Ultimately, the distance metric is another thing that must be decided by the data scientist, however the decision is usually of less importance than the value of k.
 \end{itemize}
 
