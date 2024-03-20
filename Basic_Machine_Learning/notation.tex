@@ -1,5 +1,5 @@
 \chapter{Notation and Definition}
-Test
+
 \section{Notation}
 
 We will review all the necessary notation and mathematics for us to continue the journey of Machine Learning.
@@ -258,6 +258,11 @@ where \(f_{X}\) is the pdf of the variable \(X\) and \(\int_{\mathbb{R}}\) is th
 \end{tcolorbox}
 The property of the pdf that the area under its curve is 1 mathematically means that \(\int_{\mathbb{R}} f_{X}(x) d x=1\). Most of the time we don't know \(f_{X}\), but we can observe some values of \(X\). In machine learning, we call these values \textbf{examples}, and the collection of these examples is called a \textbf{sample} or a \textbf{dataset}.
 
+\textbf{Covariance}, defined by the equation 
+\begin{equation}
+\frac{\sum{{(x_i-\bar{x})(y_i-\bar{y})}}{N-1}
+end{equation}
+is a measure of how well two variables are correlated. It looks remarkably similar to the variance equation, and that's no coincidence. If
 \section{Unbiased Estimator}
 Because \(f_{X}\) is usually unknown, but we have sample \(S_{X}=\left\{x_{i}\right\}_{i=1}^{N}\), we often content ourselves not with the true values of statistics of the probability distribution, such as expectation, but with their \textbf{unbiased estimators}.
 
