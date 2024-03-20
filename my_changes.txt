@@ -1,1 +1,2 @@
 Here is a list of the things that I have added to the repository:
+  -Added a bit about covariance and covariance matrices in notation.tex.
