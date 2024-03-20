@@ -262,7 +262,17 @@ The property of the pdf that the area under its curve is 1 mathematically means 
 \begin{equation}
 \frac{\sum{{(x_i-\bar{x})(y_i-\bar{y})}}{N-1}
 end{equation}
-is a measure of how well two variables are correlated. It looks remarkably similar to the variance equation, and that's no coincidence. If
+is a measure of how well two variables are correlated. It looks remarkably similar to the variance equation, and that's no coincidence. A covariance that is higher in magnitude (meaning that it may be positive or negative, simply that it must be farther away from 0) indicates a stronger correlation between variables. We can see why this is by examining the numerator of the equation: the sum of $(x_i-\bar{x})(y_i-\bar{y})$ will be largest in magnitude when the sign of both factors in this expression are usually in agreement with one another over all data points. When this is the case, the variables are more correlated and the covariance will be positive if they are positively correlated, and negative if they are negatively correlated. If there isn't much of a correlation between the variables, the covariance will be close to 0, as each term in the summation will cancel out other terms randomly.
+
+Covariance is important for a multitude of reasons, but a very important tool using covariance is the covariance matrix, defined as
+\begin{bmatrix}
+\text{Cov}(X_1, X_1) & \text{Cov}(X_1, X_2) & \dots & \text{Cov}(X_1, X_n) \\
+\text{Cov}(X_2, X_1) & \text{Cov}(X_2, X_2) & \dots & \text{Cov}(X_2, X_n) \\
+\vdots & \vdots & \ddots & \vdots \\
+\text{Cov}(X_n, X_1) & \text{Cov}(X_n, X_2) & \dots & \text{Cov}(X_n, X_n) \\
+\end{bmatrix}
+This matrix tells us information about the correlation between all the variables in the matrix. It is important for understanding datasets better in the preprocessing stage, as well as being important for certain machine learning algorithms, such as principal component analysis.
+
 \section{Unbiased Estimator}
 Because \(f_{X}\) is usually unknown, but we have sample \(S_{X}=\left\{x_{i}\right\}_{i=1}^{N}\), we often content ourselves not with the true values of statistics of the probability distribution, such as expectation, but with their \textbf{unbiased estimators}.
 
