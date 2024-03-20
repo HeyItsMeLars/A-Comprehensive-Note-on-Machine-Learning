@@ -258,6 +258,23 @@ where \(f_{X}\) is the pdf of the variable \(X\) and \(\int_{\mathbb{R}}\) is th
 \end{tcolorbox}
 The property of the pdf that the area under its curve is 1 mathematically means that \(\int_{\mathbb{R}} f_{X}(x) d x=1\). Most of the time we don't know \(f_{X}\), but we can observe some values of \(X\). In machine learning, we call these values \textbf{examples}, and the collection of these examples is called a \textbf{sample} or a \textbf{dataset}.
 
+\textbf{Covariance} is the variance between two variables. It is a measure of how related, or perhaps unrelated, two variables are. It is given by the equation
+\begin{equation}
+	Cov_{x,y} = \frac{\sum{(x_i-\bar{x})(y_i-\bar{y})}}{N-1}
+\end{equation}
+It is easy to see that this looks similar to the variance equation, which makes perfect sense. Where variance only measures how far a variable has strayed from the mean, covariance is a measure of how two different variables interact with eachother, in their relationship to the mean. If the numerator of the covariance equarion is positive, this is because the majority of each $(x_i-\bar{x})(y_i-\bar{y})$ term must have also been been positive, meaning that most of the time, both factors were positive, or both were negative. This means that their behavior is similar and positively correlated. Likewise, if the numerator turns out to be negative, this is because the majority of the time, the factors have opposite sides, and as such, result in a negative covariance. In other words, the behavior of the variables is negatively correlated. A covariance close to 0 indicates a lack of a relationship one way or the other.
+
+Why do we care about covariance? Well, in machine learning, there is a helpful tool called a covariance matrix, which can help analyists in determining what sort of relationships to look for between features of a dataset, among other uses in specific machine learning algorithms, such as PCA. Covariance matrices take the form
+
+\begin{bmatrix}
+Cov_{1,1} & Cov_{1,2} & \dots \\
+Cov_{2,1} & Cov_{2,2} & \dots \\
+\vdots & \ddots & \\
+Cov_{n,1} & \dots & Cov_{n,n}
+\end{bmatrix}
+
+Notice that the diagonals of the covariance matrices are the covariance of a variable with itself. This just means that these are the variance of these variables.
+
 \section{Unbiased Estimator}
 Because \(f_{X}\) is usually unknown, but we have sample \(S_{X}=\left\{x_{i}\right\}_{i=1}^{N}\), we often content ourselves not with the true values of statistics of the probability distribution, such as expectation, but with their \textbf{unbiased estimators}.
 
