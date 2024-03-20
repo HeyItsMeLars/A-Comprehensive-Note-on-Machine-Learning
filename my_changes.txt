@@ -1,3 +1,3 @@
 Here is a list of the things that I have added to the repository:
-  -Added a bit about covariance and covariance matrices in notation.tex, as well as why this is important. (Starts on line 260)
-  -Added KNN section to fundamental algorithm that hadn't been added yet (when I wrote it, may have changed since then)
+  -Added a bit about covariance and covariance matrices in notation.tex, as well as why this is important. (Starts on line 260 on notation.tex)
+  -Added KNN section to fundamental algorithm that hadn't been added yet (when I wrote it, may have changed since then) (line 129 fundamental_algo.tex)
