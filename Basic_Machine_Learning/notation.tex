@@ -328,6 +328,20 @@ A \textit{hyper-parameter} is a property of a learning algorithm, usually (but n
 
 In a classification problem, a label is a member of a finite set of \textbf{classes}. If the size of the set of classes is two, then it is a \textbf{binary} or \textbf{binomial} \textbf{classification}. \textbf{Multiclass classification} (also called \textbf{multinomial}) is a classification problem with three or more classes.
 
+To assess the quality of a classification algorithm, we have a handful of metrics. In classification problems, we want the true negatives and positives to be as high as possible, while keeping false negatives and false positives to a minimum. Put more simply, we want make predictions that are consistently correct. To do this, we can calculate the \textbf{precision and recall scores} to assess how well our model performs.
+
+A metric used for to ascertain how well decision tree classifiers work is called the \textbf{Gini Impurity}. It is given by the equation
+\begin{equation}
+G = 1-\sum_{i=1}^c{(p_i)^2}
+\end{equation}
+Where $p_i$ is the probability of being in a certain class. This calculation shows how well a split works at a given node. A score close or equal to 0 is very good, as this means the sum of the probabilities of being in one of the classes is high. As such, we have constructed a decision tree that has minimized the uncertainty, or equivalently, that has child nodes that are predominantly of one class. 
+
+This concept is similar to \textbf{entropy}, given by the equation
+\begin{equation}
+E = -\sum_{i=1}^N{p_iln(p_i)}
+\end{equation}
+Both of these are metrics which can be used to discern how well we have minimized uncertainty in our models. The difference is one of how they function. In datasets with uneven class sizes, Gini Impurity may sometimes be preferred due to its sensitivity to imbalance in datasets.
+
 \textbf{Regression} is a problem of predicting a real-valued label (often called a \textbf{target}) given an unlabeled example. The regression problem is solved by a \textbf{regression learning algorithm} that takes a collection of labelled examples as inputs and produces a model that can take an unlabeled example as input and output a target.
 
 \section{Model-Based vs. Instance-Based Learning}
