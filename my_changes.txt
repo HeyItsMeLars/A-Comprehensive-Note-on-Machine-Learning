@@ -1,4 +1,6 @@
 Here is a list of the things that I have added to the repository:
-  -Added a bit about covariance and covariance matrices in notation.tex, as well as why this is important. (Starts on line 260 on notation.tex)
-  -Added KNN section to fundamental algorithm that hadn't been added yet (when I wrote it, may have changed since then) (line 129 fundamental_algo.tex) because I wanted to review
-  -Added a bit about gini impurity (since it was mentioned but never explained in detail) and compared it to entropy (line 331 notation.tex)
+  -Added a bit about covariance and covariance matrices in notation.tex, as well as why this is important. (Starts on line 260 on notation.tex) My source for the information was the textbook Probability and Statistics   for Science and Engineering with Examples in R by Hongshik Ahn.
+  -Added KNN section to fundamental algorithm that hadn't been added yet (when I wrote it, may have changed since then) (line 129 fundamental_algo.tex) because I wanted to review. Source was class notes
+  -Added a bit about gini impurity (since it was mentioned but never explained in detail) and compared it to entropy (line 331 notation.tex). Source was https://www.learndatasci.com/glossary/gini-impurity/
+  -Created a new document in Basic Machine Learning which is for algorithms which I believe are useful and/or interesting (sources are in code comments)
+  -LDA and QDA: what are they, why do we care, what advantages are there over other algorithms, what disadvantages?
