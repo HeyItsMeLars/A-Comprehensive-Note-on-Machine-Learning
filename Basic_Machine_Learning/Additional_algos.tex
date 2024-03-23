@@ -1,1 +1,13 @@
-Hello
+% Source: https://online.stat.psu.edu/stat508/ and https://afit-r.github.io/discriminant_analysis
+\section{LDA and QDA}
+Linear discriminant analysis (LDA) and quadratic discriminant analysis (QDA) are both classification algorithms that are reliable and tend to perform well given that they are used in the correct circumstances.  Under both, we assume that the data follows a multivariate Gaussian given by the equation
+\begin{equation}
+f_k(x) = \frac{1}{(2\pi)^{p/2}\sqrt{|\Sigma_k|}}*e^{-\frac{1}{2}(x[\mu_k)^T*\Sigma_k^{-1}(x-\mu_k)}
+\end{equation}
+where p is the dimension and $\Sigma_k$ is the covariance matrix. In LDA, we assume that the covariance matrices are all the same. LDA is a bit simpler of an algorithm to implement: we use it for linearly seperable data and the assumption that the covariance matrices are all the same make it less computationally expensive than it would be without this assumption.
+
+QDA, on the other hand, does not make this assumption, and as such, is a non-linear model. It can be used on data which is not linearly seperable obviously, however again at the cost of being a bit more computationally expensive. Also, it can be prone to overfitting and requires having a lot of data if there will be many features in the data set. 
+
+So why choose LDA or QDA over other classification algorithms? For one, discriminant analysis can handle response classes with more than two outputs. Also QDA can handle non-linear data very well in some situations, and as such can perform better than logistic regression in this way. Discriminant analysis can also perform more efficiently due to its using more information about the dataset. If the data is very well seperated, sometimes logistic regression can provide unstable parameter estimates, which LDA does not suffer from. In many instances, the logistic regression model and the LDA model for a dataset can give similar outputs.
+
+Discriminant analysis is not always the best classification algorithm, however. It makes the presupposition that the variables are drawn from a normal distribution, which will not always be the case, and as such, will not work well with every data set. Furthermore, the number of predictor variables must be less than the sample size. The ratio of at least 1 predictor variables for at least every 5 samples is a general rule of thumb to properly train the model.
